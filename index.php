@@ -29,17 +29,27 @@ $branches =$db->process_select_query($branch_sql);
 					<div class="branch-details">
 						<?php if($accounts) { 
 							foreach ($accounts as $value_account) {?>
-							<p class="toggle-acc account-head" data-id ="<?php echo $value_account['id']; ?>	"><i class="icon-plus"></i><?php echo $value_account['name']; ?></p>
+							<p class="toggle-acc account-head" data-id ="<?php echo $value_account['id']; ?>	"><i class="icon-plus"></i><?php echo $value_account['name']; ?><span class="status <?php echo $value_account['status'] == 1 ? 'active' : 'inactive'; ?>"><?php echo $value_account['status'] == 1 ? "Active" : "Inactive"; ?></span></p>
 							<?php			
 							$acc_type_sql = "select * from acc_types where account_id ='".$value_account['id']."'";
 							$acc_types =$db->process_select_query($acc_type_sql);
 							?>
 							<div class="account-details">
-								<?php if($acc_types) { 
-									foreach ($acc_types as $value_acc_type) {?>
-									<p data-id="<?php echo $value_acc_type['id']; ?>"><?php echo $value_acc_type['name']; ?></p>
-									<? }
-								}?>
+								<table>
+									<tr>
+										<th>Account Type</th>
+										<th>Open Date</th>
+									</tr>
+									<?php if($acc_types) { 
+										foreach ($acc_types as $value_acc_type) {?>
+
+										<tr>
+											<td><?php echo $value_acc_type['name']; ?></td>
+											<td><?php echo $value_acc_type['created_date']; ?></td>
+										</tr>
+										<? }
+									}?>
+								</table>
 							</div>
 							<? }
 						}?>

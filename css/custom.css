@@ -20,7 +20,7 @@
 	margin-bottom: 10px;
 }
 .branch-head{
-	border: 1px solid #FF6218;
+	border: 1px solid #0099cc;
 	padding: 10px;
 	border-radius: 10px;
 	background: #fff;
@@ -38,4 +38,32 @@
 i{
 	vertical-align: middle;
 	padding-right: 10px;
+}
+
+
+.status{
+	display: inline-block;
+	float: right;
+	text-align: left;
+	width: 100px;
+}
+.active{
+	color: #00BD00;
+
+}
+.inactive{
+	color: #D50000;
+}
+
+
+table{
+	width: 50%;
+}
+tr{
+	border: 1px solid;
+	border-width: 1px 0px 1px 1px;
+}
+th,td{
+	padding: 5px;
+	border-right: 1px solid;
 }
