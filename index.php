@@ -9,7 +9,6 @@ $branches =$db->process_select_query($branch_sql);
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Accordion</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/custom.css">
 	<script src="js/jquery-1.9.1.js"></script>
